@@ -1,0 +1,16 @@
+﻿@model StoreManagement.Models.Product
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<h2>Product Details</h2>
+
+<table class="table">
+    <tr><th>Product Name</th><td>@Model.ProductName</td></tr>
+    <tr><th>Category</th><td>@Model.Category.CategoryName</td></tr>
+    <tr><th>Price</th><td>R @Model.Price.ToString("N2")</td></tr>
+    <tr><th>Stock Qty</th><td>@Model.StockQty</td></tr>
+</table>
+
+<a asp-action="Edit" asp-route-id="@Model.ProductId" class="btn btn-primary">Edit</a>
+<a asp-action="Index" class="btn btn-secondary">Back</a>

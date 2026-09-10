@@ -1,0 +1,101 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+
+<div class="container mt-4">
+
+    <!-- Header Banner -->
+    <div class="p-4 mb-4 bg-dark text-white rounded">
+        <h1 class="display-6">About This System</h1>
+        <p class="mb-0">Developer information and system details.</p>
+    </div>
+
+    <!-- Developer Details -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-dark text-white">
+            <h5 class="mb-0">👤 Developer Details</h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered mb-0">
+                <tr>
+                    <th width="30%">Full Name</th>
+                    <td>Siyabonga Mdunjana</td>
+                </tr>
+                <tr>
+                    <th>Student Number</th>
+                    <td>225022486</td>
+                </tr>
+                <tr>
+                    <th>Institution</th>
+                    <td>Nelson Mandela University</td>
+                </tr>
+                <tr>
+                    <th>Module</th>
+                    <td>ONT3001</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- System Information -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-dark text-white">
+            <h5 class="mb-0">🖥️ System Information</h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered mb-0">
+                <tr>
+                    <th width="30%">System Name</th>
+                    <td>Store Management System</td>
+                </tr>
+                <tr>
+                    <th>Framework</th>
+                    <td>ASP.NET Core MVC (.NET 8)</td>
+                </tr>
+                <tr>
+                    <th>Database</th>
+                    <td>SQL Server</td>
+                </tr>
+                <tr>
+                    <th>ORM</th>
+                    <td>Entity Framework Core (Database First)</td>
+                </tr>
+                <tr>
+                    <th>Language</th>
+                    <td>C#</td>
+                </tr>
+                <tr>
+                    <th>Query Method</th>
+                    <td>LINQ (Language Integrated Query)</td>
+                </tr>
+                <tr>
+                    <th>UI Framework</th>
+                    <td>Bootstrap 5</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- System Features -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-dark text-white">
+            <h5 class="mb-0">✅ System Features</h5>
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">📦 Manage Products — Add, Edit, View and Delete products</li>
+                <li class="list-group-item">🗂️ Manage Categories — Organise products into categories</li>
+                <li class="list-group-item">👤 Manage Customers — Store and manage customer records</li>
+                <li class="list-group-item">🧾 Manage Orders — Track and manage customer orders</li>
+                <li class="list-group-item">🔗 Database First approach using Entity Framework Core</li>
+                <li class="list-group-item">🔍 LINQ used throughout all controllers for data queries</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <a asp-controller="Home" asp-action="Index" class="btn btn-dark mb-4">
+        ← Back to Home
+    </a>
+
+</div>

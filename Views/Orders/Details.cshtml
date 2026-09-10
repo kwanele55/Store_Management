@@ -1,0 +1,40 @@
+﻿@model StoreManagement.Models.Order
+@{
+    ViewData["Title"] = "Order Details";
+}
+
+<h2>Order Details</h2>
+
+<table class="table">
+    <tr><th>Order ID</th><td>@Model.OrderId</td></tr>
+    <tr><th>Customer</th><td>@Model.Customer.FirstName @Model.Customer.LastName</td></tr>
+    <tr><th>Order Date</th><td>@Model.OrderDate.ToString("dd MMM yyyy")</td></tr>
+    <tr><th>Total Amount</th><td>R @Model.TotalAmount.ToString("N2")</td></tr>
+    <tr><th>Status</th><td>@Model.Status</td></tr>
+</table>
+
+<h4>Order Items</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Line Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.OrderItems)
+        {
+            <tr>
+                <td>@item.Product.ProductName</td>
+                <td>@item.Quantity</td>
+                <td>R @item.UnitPrice.ToString("N2")</td>
+                <td>R @((item.LineTotal ?? 0).ToString("N2"))</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Edit" asp-route-id="@Model.OrderId" class="btn btn-primary">Edit</a>
+<a asp-action="Index" class="btn btn-secondary">Back</a>

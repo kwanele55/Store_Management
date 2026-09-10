@@ -1,0 +1,37 @@
+﻿@model IEnumerable<StoreManagement.Models.Order>
+@{
+    ViewData["Title"] = "Orders";
+}
+
+<h2>Orders</h2>
+<p><a asp-action="Create">Add New Order</a></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Order Date</th>
+            <th>Total Amount</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var o in Model)
+        {
+            <tr>
+                <td>@o.OrderId</td>
+                <td>@o.Customer.FirstName @o.Customer.LastName</td>
+                <td>@o.OrderDate.ToString("dd MMM yyyy")</td>
+                <td>R @o.TotalAmount.ToString("N2")</td>
+                <td>@o.Status</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@o.OrderId">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@o.OrderId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@o.OrderId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

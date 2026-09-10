@@ -1,0 +1,35 @@
+﻿@model IEnumerable<StoreManagement.Models.Product>
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h2>Products</h2>
+<p><a asp-action="Create">Add New Product</a></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock Qty</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.ProductName</td>
+                <td>@p.Category.CategoryName</td>
+                <td>R @p.Price.ToString("N2")</td>
+                <td>@p.StockQty</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@p.ProductId">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@p.ProductId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@p.ProductId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

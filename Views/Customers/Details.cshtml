@@ -1,0 +1,16 @@
+﻿@model StoreManagement.Models.Customer
+@{
+    ViewData["Title"] = "Customer Details";
+}
+
+<h2>Customer Details</h2>
+
+<table class="table">
+    <tr><th>First Name</th><td>@Model.FirstName</td></tr>
+    <tr><th>Last Name</th><td>@Model.LastName</td></tr>
+    <tr><th>Email</th><td>@Model.Email</td></tr>
+    <tr><th>Registered Date</th><td>@Model.RegisteredDate.ToString("dd MMM yyyy")</td></tr>
+</table>
+
+<a asp-action="Edit" asp-route-id="@Model.CustomerId" class="btn btn-primary">Edit</a>
+<a asp-action="Index" class="btn btn-secondary">Back</a>

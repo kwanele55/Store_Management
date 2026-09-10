@@ -1,0 +1,21 @@
+﻿@model StoreManagement.Models.Order
+@{
+    ViewData["Title"] = "Delete Order";
+}
+
+<h2>Delete Order</h2>
+<p>Are you sure you want to delete this order?</p>
+
+<table class="table">
+    <tr><th>Order ID</th><td>@Model.OrderId</td></tr>
+    <tr><th>Customer</th><td>@Model.Customer.FirstName @Model.Customer.LastName</td></tr>
+    <tr><th>Order Date</th><td>@Model.OrderDate.ToString("dd MMM yyyy")</td></tr>
+    <tr><th>Total Amount</th><td>R @Model.TotalAmount.ToString("N2")</td></tr>
+    <tr><th>Status</th><td>@Model.Status</td></tr>
+</table>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="OrderId" />
+    <input type="submit" value="Yes, Delete" class="btn btn-danger" />
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
