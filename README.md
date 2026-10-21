@@ -1,106 +1,23 @@
-# StoreManagement
+# Store Management System
 
-A simple **ASP.NET Core MVC** web application for managing a store's categories, products, customers, and orders — built as a CRUD (Create, Read, Update, Delete) assignment using **Entity Framework Core** and **SQL Server**.
+A full-stack ASP.NET Core MVC web application for managing a store's categories, products, customers and orders, built with Entity Framework Core (Code-First) and SQL Server.
 
-## Features
+**[▶ Watch the demo on YouTube]([https://youtu.be/-mVQSHPKC1U])**
 
-- Full CRUD operations (Create, Read, Update, Delete) for:
-  - **Categories**
-  - **Products**
-  - **Customers**
-  - **Orders**
-- Relational data model with foreign keys and navigation properties (e.g. a Product belongs to a Category, an Order belongs to a Customer and contains Order Items)
-- Server-side rendered views using Razor (`.cshtml`)
-- Bootstrap-based responsive UI
+## What this project shows
+
+- **Database design:** a relational model with foreign keys and navigation properties (Products belong to Categories, Orders belong to Customers, Order Items link Orders to Products)
+- **Backend:** full CRUD for Categories, Products, Customers and Orders using MVC controllers and EF Core
+- **Code-First development:** schema managed through EF Core migrations
+- **Frontend:** server-rendered Razor views, responsive Bootstrap UI and client-side validation with jQuery Validation
 
 ## Tech Stack
 
-- **Framework:** ASP.NET Core MVC (.NET 8.0)
-- **ORM:** Entity Framework Core 8.0 (`Microsoft.EntityFrameworkCore.SqlServer`)
-- **Database:** SQL Server (SQL Server Express by default)
-- **Frontend:** Razor Views, Bootstrap, jQuery, jQuery Validation
+C# · ASP.NET Core MVC (.NET 8) · Entity Framework Core 8 · SQL Server · Razor · Bootstrap · jQuery
 
-## Project Structure
-
-```
-StoreManagement/
-├── Controllers/
-│   ├── CategoriesController.cs
-│   ├── ProductsController.cs
-│   ├── CustomersController.cs
-│   ├── OrdersController.cs
-│   └── HomeController.cs
-├── Models/
-│   ├── Category.cs
-│   ├── Product.cs
-│   ├── Customer.cs
-│   ├── Order.cs
-│   ├── OrderItem.cs
-│   └── StoreManagementDbContext.cs
-├── Views/
-│   ├── Categories/
-│   ├── Products/
-│   ├── Customers/
-│   ├── Orders/
-│   └── Shared/
-├── wwwroot/
-├── appsettings.json
-└── Program.cs
-```
-
-## Data Model
-
-| Entity        | Key Fields                                                       | Relationships                          |
-|---------------|--------------------------------------------------------------------|-----------------------------------------|
-| **Category**  | CategoryId, CategoryName, Description, IsActive, CreatedDate       | Has many Products                       |
-| **Product**   | ProductId, ProductName, Price, StockQty                            | Belongs to Category, has many OrderItems |
-| **Customer**  | CustomerId, FirstName, LastName, Email, RegisteredDate              | Has many Orders                         |
-| **Order**     | OrderId, OrderDate, TotalAmount, Status                            | Belongs to Customer, has many OrderItems |
-| **OrderItem** | OrderItemId, Quantity, UnitPrice, LineTotal                        | Belongs to Order and Product            |
-
-## Getting Started
-
-### Prerequisites
-
-- [.NET 8.0 SDK](https://dotnet.microsoft.com/download)
-- SQL Server or SQL Server Express (LocalDB also works)
-- Visual Studio 2022 (recommended) or VS Code
-
-### Setup
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/kwanele55/Store_Management.git
-   cd Store_Management
-   ```
-
-2. **Configure the database connection**
-
-   Update the connection string in `appsettings.json` if needed:
-   ```json
-   "ConnectionStrings": {
-     "StoreManagementDbContext": "Server=.\\SQLEXPRESS;Database=StoreManagementDB;Trusted_Connection=True;TrustServerCertificate=True;"
-   }
-   ```
-
-3. **Apply database migrations** (if using EF Core migrations)
-   ```bash
-   dotnet ef database update
-   ```
-
-4. **Run the application**
-   ```bash
-   dotnet run
-   ```
-
-   Or press `F5` / `Ctrl+F5` in Visual Studio.
-
-5. Open your browser to the URL shown in the console (e.g. `https://localhost:5001`).
-
-## Usage
-
-Navigate between the **Categories**, **Products**, **Customers**, and **Orders** sections from the app to view records in a list, and use the **Create**, **Edit**, **Details**, and **Delete** links on each to manage entries.
 
 ## Author
 
-**Kwanele** — [kwanele55](https://github.com/kwanele55)
+**Siyabonga Mdunjana**
+Final-year Software Development student, Nelson Mandela University (graduating December 2026)
+[LinkedIn](https://www.linkedin.com/in/siyabonga-mdunjana-356a46292/) · [GitHub](https://github.com/kwanele55)
