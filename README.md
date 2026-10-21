@@ -2,7 +2,7 @@
 
 A full-stack ASP.NET Core MVC web application for managing a store's categories, products, customers and orders, built with Entity Framework Core (Code-First) and SQL Server.
 
-**[▶ Watch the demo on YouTube]([https://youtu.be/-mVQSHPKC1U])**
+**[▶ Watch the demo on YouTube](https://youtu.be/-mVQSHPKC1U)**
 
 ## What this project shows
 
